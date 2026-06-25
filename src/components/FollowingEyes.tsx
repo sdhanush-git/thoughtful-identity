@@ -42,8 +42,8 @@ function Eye({ mouse }: { mouse: { x: number; y: number } }) {
       >
         <motion.div
           animate={{ x: angle.x, y: angle.y }}
-          transition={{ type: "spring", stiffness: 120, damping: 18, mass: 0.6 }}
-          className="size-10 rounded-full bg-foreground md:size-14"
+          transition={{ type: "spring", stiffness: 140, damping: 20, mass: 0.55 }}
+          className="size-4 rounded-full bg-foreground shadow-[0_1px_2px_rgba(0,0,0,0.12)] md:size-5"
         />
       </motion.div>
     </div>
