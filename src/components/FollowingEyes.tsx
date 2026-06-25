@@ -14,10 +14,12 @@ function Eye({ mouse }: { mouse: { x: number; y: number } }) {
     const dx = mouse.x - cx;
     const dy = mouse.y - cy;
     const dist = Math.min(Math.hypot(dx, dy), 200);
-    const max = rect.width * 0.18;
-    const scale = (dist / 200) * max;
+    const scale = dist / 200;
     const a = Math.atan2(dy, dx);
-    setAngle({ x: Math.cos(a) * scale, y: Math.sin(a) * scale });
+    setAngle({
+      x: Math.cos(a) * scale * rect.width * 0.22,
+      y: Math.sin(a) * scale * rect.height * 0.16,
+    });
   }, [mouse]);
 
   useEffect(() => {
@@ -31,19 +33,19 @@ function Eye({ mouse }: { mouse: { x: number; y: number } }) {
   return (
     <div
       ref={ref}
-      className="relative size-32 rounded-full bg-white shadow-[0_1px_0_rgba(0,0,0,0.04)] ring-1 ring-foreground/10 overflow-hidden md:size-44"
+      className="relative h-16 w-12 rounded-[50%] bg-white overflow-hidden md:h-20 md:w-14"
     >
       <motion.div
         animate={{
           scaleY: blink ? 0.05 : 1,
         }}
         transition={{ duration: 0.12, ease: "easeOut" }}
-        className="absolute inset-0 flex items-center justify-center"
+        className="absolute inset-0 flex items-start justify-center pt-2.5 md:pt-3"
       >
         <motion.div
           animate={{ x: angle.x, y: angle.y }}
           transition={{ type: "spring", stiffness: 140, damping: 20, mass: 0.55 }}
-          className="size-4 rounded-full bg-foreground shadow-[0_1px_2px_rgba(0,0,0,0.12)] md:size-5"
+          className="size-3 rounded-full bg-foreground md:size-3.5"
         />
       </motion.div>
     </div>
@@ -60,7 +62,7 @@ export function FollowingEyes() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center gap-6 md:gap-10" aria-hidden>
+    <div className="flex items-center justify-center gap-1.5 md:gap-2" aria-hidden>
       <Eye mouse={mouse} />
       <Eye mouse={mouse} />
     </div>
