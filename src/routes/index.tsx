@@ -7,6 +7,42 @@ import project3 from "@/assets/project-3.jpg";
 import { StatusBadge } from "@/components/StatusBadge";
 import { FollowingEyes } from "@/components/FollowingEyes";
 
+const stack = [
+  { name: "HTML",    short: "<>",  bg: "#E34F26", fg: "#FFFFFF" },
+  { name: "CSS",     short: "{}",  bg: "#1572B6", fg: "#FFFFFF" },
+  { name: "JavaScript", short: "JS", bg: "#F7DF1E", fg: "#111111" },
+  { name: "React",   short: "⚛",   bg: "#0F1115", fg: "#61DAFB" },
+  { name: "Node",    short: "N",   bg: "#3C873A", fg: "#FFFFFF" },
+  { name: "MongoDB", short: "M",   bg: "#13AA52", fg: "#FFFFFF" },
+  { name: "SQL",     short: "SQL", bg: "#00618A", fg: "#FFFFFF" },
+  { name: "Tailwind",short: "TW",  bg: "#0EA5E9", fg: "#FFFFFF" },
+  { name: "Bootstrap", short: "B", bg: "#7952B3", fg: "#FFFFFF" },
+];
+
+function StackRow() {
+  return (
+    <motion.div variants={fadeUp} className="mt-10 flex flex-wrap items-center gap-4">
+      <span className="font-serif text-base italic text-muted-foreground">My stack</span>
+      <ul className="flex flex-wrap items-center gap-2">
+        {stack.map((s) => (
+          <li key={s.name} className="group relative">
+            <span
+              aria-label={s.name}
+              style={{ backgroundColor: s.bg, color: s.fg }}
+              className="flex size-9 items-center justify-center rounded-[9px] text-[12px] font-semibold tracking-tight ring-1 ring-foreground/10 shadow-[0_1px_2px_rgba(0,0,0,0.08)] transition-transform duration-200 ease-out group-hover:-translate-y-1"
+            >
+              {s.short}
+            </span>
+            <span className="pointer-events-none absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-foreground px-2 py-1 text-[10px] uppercase tracking-[0.18em] text-background opacity-0 transition-opacity duration-150 group-hover:opacity-100">
+              {s.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </motion.div>
+  );
+}
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -371,6 +407,7 @@ function Index() {
               details that make software feel considered. I'm still learning every day —
               that part doesn't end.
             </motion.p>
+            <StackRow />
           </div>
         </div>
       </Section>
