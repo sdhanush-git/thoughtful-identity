@@ -150,12 +150,13 @@ const building = [
 ];
 
 const timeline = [
-  { year: "2018", title: "Started learning programming", body: "First lines of C in a college lab. Hooked immediately." },
-  { year: "2020", title: "Built first website", body: "Static HTML and CSS — clumsy, but shipped and shared." },
-  { year: "2021", title: "Discovered React", body: "Components clicked. Started thinking in interfaces." },
-  { year: "2023", title: "Built MERN projects", body: "End-to-end apps with auth, data, and real users." },
-  { year: "2024", title: "Completed MCA", body: "Finished postgraduate studies in computer applications." },
-  { year: "2026", title: "Seeking software engineering roles", body: "Looking for a team that cares about craft." },
+  { year: "2021", title: "BSc Computer Science", body: "Started the degree that gave me my foundation in computing." },
+  { year: "2022", title: "Fell in love with the web", body: "Moved from C and Java to HTML, CSS, and React." },
+  { year: "2023", title: "Built MERN projects", body: "End-to-end apps with auth, databases, and real users." },
+  { year: "2024", title: "BSc Completed", body: "Finished my undergraduate degree in Computer Science." },
+  { year: "2024", title: "Started MCA", body: "Began postgraduate studies in Computer Applications." },
+  { year: "2025", title: "Shipped production work", body: "Built polished, performant products while finishing my masters." },
+  { year: "2026", title: "MCA Graduated", body: "Completed postgraduate studies and started looking for the right team." },
 ];
 
 const obsessions = ["React", "Next.js", "TypeScript", "AI", "System Design"];
