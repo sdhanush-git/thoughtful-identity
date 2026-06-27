@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import portrait from "@/assets/dhanush-portrait.jpg";
+import portrait from "@/assets/dhanush-portrait.png.asset.json";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
@@ -179,7 +179,7 @@ function Index() {
           <motion.div variants={fadeUp} className="col-span-12 md:col-span-3">
             <div className="aspect-[3/4] w-40 overflow-hidden rounded-2xl bg-muted md:w-full">
               <img
-                src={portrait}
+                src={portrait.url}
                 alt="Portrait of Dhanush S."
                 width={768}
                 height={1024}
