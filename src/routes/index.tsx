@@ -5,7 +5,6 @@ import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import { StatusBadge } from "@/components/StatusBadge";
-import { FollowingEyes } from "@/components/FollowingEyes";
 
 const stack = [
   { name: "HTML",    short: "<>",  bg: "#E34F26", fg: "#FFFFFF" },
@@ -463,12 +462,6 @@ function Index() {
             </motion.ul>
           </div>
 
-          <motion.div
-            variants={fadeUp}
-            className="col-span-12 flex items-center justify-center md:col-span-5 md:pt-10"
-          >
-            <FollowingEyes />
-          </motion.div>
         </div>
       </Section>
 
