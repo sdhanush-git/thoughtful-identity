@@ -1,6 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import portrait from "@/assets/dhanush-portrait.png.asset.json";
+import portrait from "@/assets/dhanush-portrait.png";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
@@ -41,26 +40,6 @@ function StackRow() {
     </motion.div>
   );
 }
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Dhanush S — Software Engineer" },
-      {
-        name: "description",
-        content:
-          "Dhanush S — MCA graduate and MERN developer building fast, thoughtful web products from India.",
-      },
-      { property: "og:title", content: "Dhanush S — Software Engineer" },
-      {
-        property: "og:description",
-        content:
-          "Personal site of Dhanush S. Frontend, MERN, full stack work. Available for opportunities.",
-      },
-    ],
-  }),
-  component: Index,
-});
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -160,7 +139,7 @@ const timeline = [
 
 const obsessions = ["React", "Next.js", "TypeScript", "AI", "System Design"];
 
-function Index() {
+export default function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground selection:bg-foreground selection:text-background">
       {/* Top bar */}
@@ -179,7 +158,7 @@ function Index() {
           <motion.div variants={fadeUp} className="col-span-12 md:col-span-3">
             <div className="aspect-[3/4] w-40 overflow-hidden rounded-2xl bg-muted md:w-full">
               <img
-                src={portrait.url}
+                src={portrait}
                 alt="Portrait of Dhanush S."
                 width={768}
                 height={1024}
