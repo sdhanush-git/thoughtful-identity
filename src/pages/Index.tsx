@@ -139,7 +139,7 @@ const timeline = [
 
 const obsessions = ["React", "Next.js", "TypeScript", "AI", "System Design"];
 
-function Index() {
+export default function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground selection:bg-foreground selection:text-background">
       {/* Top bar */}
