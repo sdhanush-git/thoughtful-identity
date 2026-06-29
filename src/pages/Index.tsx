@@ -144,7 +144,7 @@ export default function Index() {
     <main className="min-h-screen bg-background text-foreground selection:bg-foreground selection:text-background">
       {/* Top bar */}
       <header className="sticky top-0 z-40 w-full">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 md:px-10">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-4 sm:px-6 md:px-10 md:py-5">
           <a href="#top" className="font-serif text-lg italic tracking-tight">
             Dhanush S.
           </a>
@@ -153,15 +153,17 @@ export default function Index() {
       </header>
 
       {/* Hero */}
-      <Section id="top" className="pb-24 pt-10 md:pb-40 md:pt-20">
-        <div className="grid grid-cols-12 gap-8">
+      <Section id="top" className="pb-20 pt-8 md:pb-40 md:pt-20">
+        <div className="grid grid-cols-12 gap-6 md:gap-8">
           <motion.div variants={fadeUp} className="col-span-12 md:col-span-3">
-            <div className="aspect-[3/4] w-40 overflow-hidden rounded-2xl bg-muted md:w-full">
+            <div className="aspect-[3/4] w-32 overflow-hidden rounded-2xl bg-muted sm:w-40 md:w-full">
               <img
                 src={portrait}
                 alt="Portrait of Dhanush S."
                 width={768}
                 height={1024}
+                loading="eager"
+                decoding="async"
                 className="size-full object-cover"
               />
             </div>
@@ -175,7 +177,7 @@ export default function Index() {
           <div className="col-span-12 md:col-span-9 md:pl-6">
             <motion.h1
               variants={fadeUp}
-              className="font-serif text-[2.6rem] leading-[1.05] tracking-tight md:text-[5.25rem]"
+              className="font-serif text-[2rem] leading-[1.05] tracking-tight sm:text-[2.6rem] md:text-[4rem] lg:text-[5.25rem]"
             >
               I build practical web products
               <span className="text-muted-foreground"> with clean code </span>
@@ -392,14 +394,14 @@ export default function Index() {
       </Section>
 
       {/* Contact + Eyes */}
-      <Section id="contact" className="border-t border-foreground/10 py-24 md:py-40">
+      <Section id="contact" className="border-t border-foreground/10 py-20 md:py-40">
         <SectionLabel index="06" label="Contact" />
 
         <div className="grid grid-cols-12 items-start gap-10">
           <div className="col-span-12 md:col-span-7">
             <motion.h2
               variants={fadeUp}
-              className="font-serif text-4xl leading-[1.05] tracking-tight md:text-7xl"
+              className="font-serif text-4xl leading-[1.05] tracking-tight sm:text-5xl md:text-7xl"
             >
               Let's connect.
             </motion.h2>
@@ -421,12 +423,12 @@ export default function Index() {
                 <li key={l.label}>
                   <a
                     href={l.href}
-                    className="group flex items-center justify-between py-5 transition hover:pl-2"
+                    className="group flex flex-col gap-1 py-5 transition hover:pl-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
                   >
                     <span className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
                       {l.label}
                     </span>
-                    <span className="flex items-center gap-3 font-serif text-xl md:text-2xl">
+                    <span className="flex items-center gap-3 font-serif text-lg sm:text-xl md:text-2xl">
                       {l.value}
                       <span
                         aria-hidden
